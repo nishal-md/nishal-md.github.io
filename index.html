@@ -811,16 +811,34 @@ footer{
    RESPONSIVE
 ══════════════════════════════ */
 @media(max-width:1024px){
-  #hero{grid-template-columns:1fr;grid-template-rows:auto auto auto;padding:6rem 4% 0}
+  #hero{
+    grid-template-columns:1fr;
+    grid-template-rows:auto auto auto;
+    padding:6rem 4% 0;
+    min-height:auto;
+  }
   .hero-right{
-    display:flex;justify-content:center;align-items:center;
-    width:100%;margin:2rem auto 0;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:100% !important;
+    margin:2rem auto 1rem !important;
+    position:relative;
   }
   .hero-img-container{
-    width:280px;height:320px;
-    border-radius:var(--radius-lg);
-    border:1px solid var(--border);
+    width:260px !important;
+    height:300px !important;
+    border-radius:var(--radius-lg) !important;
+    border:1px solid var(--border) !important;
+    border-bottom:1px solid var(--border) !important;
     margin:0 auto;
+    overflow:hidden;
+  }
+  .float-icons{
+    width:100%;
+    max-width:320px;
+    height:100px;
   }
   .hero-socials-vertical{display:none}
   .hero-bottom{grid-template-columns:repeat(2,1fr)}
@@ -957,7 +975,7 @@ footer{
 ══════════════════════════════ */
 .float-icons{
   position:relative;
-  width:100%;height:120px;
+  width:100%;height:110px;
   margin-bottom:0.5rem;
 }
 .float-icon{
@@ -968,58 +986,32 @@ footer{
   box-shadow:0 8px 25px rgba(0,0,0,0.1);
   display:flex;align-items:center;justify-content:center;
   font-size:1.2rem;color:var(--ink);
-  cursor:default;
-  transition:transform 0.3s,box-shadow 0.3s,background 0.3s;
+  cursor:default;z-index:2;
+  transition:transform 0.3s,box-shadow 0.3s,background 0.3s,color 0.3s;
 }
-.float-icon:hover{
-  background:var(--ink);color:var(--paper);
-  box-shadow:0 12px 35px rgba(0,0,0,0.25);
-  transform:scale(1.2) translateY(-4px) !important;
-}
-/* positions */
-.fi-1{top:10px; left:5%;  animation:floatIcon 3.5s ease-in-out infinite;}
-.fi-2{top:0px;  left:22%; animation:floatIcon 4s   1s   ease-in-out infinite;}
-.fi-3{top:15px; left:40%; animation:floatIcon 3s   0.5s ease-in-out infinite;}
-.fi-4{top:5px;  left:57%; animation:floatIcon 4.5s 1.5s ease-in-out infinite; font-size:1.4rem;}
-.fi-5{top:20px; left:72%; animation:floatIcon 3.8s 0.8s ease-in-out infinite;}
-.fi-6{top:50px; left:10%; animation:floatIcon 4.2s 0.3s ease-in-out infinite;}
-.fi-7{top:55px; left:50%; animation:floatIcon 3.2s 1.2s ease-in-out infinite; font-size:1.4rem;}
-.fi-8{top:45px; left:82%; animation:floatIcon 3.6s 2s   ease-in-out infinite;}
-
-/* Python icon gold */
-.fi-1{color:#3776ab}
-.fi-1:hover{background:#3776ab;color:#fff}
-/* GitHub */
-.fi-2:hover{background:#333;color:#fff}
-/* Linux */
-.fi-3{color:#f5a623}
-.fi-3:hover{background:#f5a623;color:#fff}
-/* Brain - gold glow */
-.fi-4{box-shadow:0 8px 25px rgba(201,168,76,0.2)}
-/* DB cyan */
-.fi-5{color:var(--cyan)}
-.fi-5:hover{background:var(--cyan);color:#fff}
-/* Code green */
-.fi-6{color:var(--green)}
-.fi-6:hover{background:var(--green);color:#fff}
-/* Robot gold */
-.fi-7{box-shadow:0 8px 25px rgba(201,168,76,0.2)}
-/* Server */
-.fi-8{color:var(--muted)}
-
+.float-icon:hover{box-shadow:0 12px 35px rgba(0,0,0,0.25);transform:scale(1.2) translateY(-6px) !important;}
+.fi-1{top:8px; left:2%;  animation:floatIcon 3.5s ease-in-out infinite;color:#3776ab}
+.fi-2{top:0px; left:17%; animation:floatIcon 4s 1s ease-in-out infinite;}
+.fi-3{top:12px;left:34%; animation:floatIcon 3s 0.5s ease-in-out infinite;color:#f5a623}
+.fi-4{top:4px; left:52%; animation:floatIcon 4.5s 1.5s ease-in-out infinite;font-size:1.4rem;box-shadow:0 8px 25px rgba(201,168,76,0.2)}
+.fi-5{top:18px;left:69%; animation:floatIcon 3.8s 0.8s ease-in-out infinite;color:var(--cyan)}
+.fi-6{top:55px;left:8%;  animation:floatIcon 4.2s 0.3s ease-in-out infinite;color:var(--green)}
+.fi-7{top:52px;left:44%; animation:floatIcon 3.2s 1.2s ease-in-out infinite;font-size:1.4rem;box-shadow:0 8px 25px rgba(201,168,76,0.2)}
+.fi-8{top:48px;left:80%; animation:floatIcon 3.6s 2s ease-in-out infinite;color:var(--muted)}
+.fi-1:hover{background:#3776ab !important;color:#fff !important}
+.fi-2:hover{background:#333 !important;color:#fff !important}
+.fi-3:hover{background:#f5a623 !important;color:#fff !important}
+.fi-5:hover{background:var(--cyan) !important;color:#fff !important}
+.fi-6:hover{background:var(--green) !important;color:#fff !important}
 @keyframes floatIcon{
   0%,100%{transform:translateY(0) rotate(0deg)}
   33%{transform:translateY(-10px) rotate(3deg)}
   66%{transform:translateY(-5px) rotate(-2deg)}
 }
-
-/* connecting lines between icons - decorative dots */
 .float-icons::before{
   content:'';position:absolute;inset:0;
-  background-image:radial-gradient(circle, rgba(201,168,76,0.15) 1px, transparent 1px);
-  background-size:28px 28px;
-  border-radius:12px;
-  pointer-events:none;
+  background-image:radial-gradient(circle,rgba(201,168,76,0.12) 1px,transparent 1px);
+  background-size:28px 28px;border-radius:12px;pointer-events:none;
 }
 </style>
 </head>
@@ -1163,7 +1155,7 @@ footer{
         <div class="info-grid">
           <div class="info-item"><span>Name</span><p>Mannuru Devi Nishal</p></div>
           <div class="info-item"><span>Location</span><p>Tirupati, AP, India</p></div>
-          <div class="info-item"><span>Email</span><a href="/cdn-cgi/l/email-protection#d7b3b2a1beb9bea4bfb6bbe7e7e097b0bab6bebbf9b4b8ba"><span class="__cf_email__" data-cfemail="bfdbdac9d6d1d6ccd7ded38f8f88ffd8d2ded6d391dcd0d2">[email&#160;protected]</span></a></div>
+          <div class="info-item"><span>Email</span><span class="eml"></span></div>
           <div class="info-item"><span>Phone</span><p>+91 8985812005</p></div>
           <div class="info-item"><span>GitHub</span><a href="https://github.com/nishal-md" target="_blank">nishal-md</a></div>
           <div class="info-item"><span>Status</span><p style="color:#2dc653">● Available</p></div>
@@ -1346,7 +1338,7 @@ footer{
   <div class="contact-wrap">
     <div class="sr-l d1">
       <p style="font-size:0.97rem;color:rgba(245,242,238,0.55);line-height:1.85;font-weight:300;margin-bottom:2rem;">Whether it's a collaboration on an AI project, a job opportunity, open-source contribution, or just a great tech conversation — I'm always open. Let's build something impactful together.</p>
-      <a href="/cdn-cgi/l/email-protection#a9cdccdfc0c7c0dac1c8c599999ee9cec4c8c0c587cac6c4" class="big-email"><span class="__cf_email__" data-cfemail="f39796859a9d9a809b929fc3c3c4b3949e929a9fdd909c9e">[email&#160;protected]</span></a>
+      <span class="eml"></span>
       <div class="contact-info-list">
         <div class="cinfo"><div class="cinfo-icon"><i class="fas fa-phone"></i></div><div class="cinfo-text"><span>Phone</span><p>+91 8985812005</p></div></div>
         <div class="cinfo"><div class="cinfo-icon"><i class="fas fa-map-marker-alt"></i></div><div class="cinfo-text"><span>Location</span><p>Tirupati, Andhra Pradesh, India</p></div></div>
@@ -1377,7 +1369,7 @@ footer{
   <div class="footer-links">
     <a href="https://github.com/nishal-md" target="_blank" class="slink" title="GitHub"><i class="fab fa-github"></i></a>
     <a href="https://www.linkedin.com/in/devi-nishal-mannuru-1ba345307" target="_blank" class="slink" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    <a href="/cdn-cgi/l/email-protection#ed89889b8483849e858c81dddddaad8a808c8481c38e8280" class="slink" title="Email"><i class="fas fa-envelope"></i></a>
+    <span class="eml"></span>
     <a href="tel:+918985812005" class="slink" title="Phone"><i class="fas fa-phone"></i></a>
   </div>
 </footer>
@@ -1537,6 +1529,22 @@ const dashObs = new IntersectionObserver(entries=>{
 },{threshold:0.3});
 const dash=document.querySelector('.stats-dashboard');
 if(dash)dashObs.observe(dash);
+
+
+/* ── EMAIL DECODER (bypass Cloudflare protection) ── */
+(function(){
+  var u='devinishal007';
+  var d='gmail.com';
+  var e=u+'@'+d;
+  var spans=document.querySelectorAll('.eml');
+  spans.forEach(function(s){
+    var a=document.createElement('a');
+    a.href='mailto:'+e;
+    a.textContent=e;
+    a.style.color='inherit';
+    s.parentNode.replaceChild(a,s);
+  });
+})();
 
 /* ── CARD RADIAL GLOW ── */
 document.querySelectorAll('.about-right-top,.exp-card,.edu-card-main').forEach(c=>{
