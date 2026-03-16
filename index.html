@@ -1155,7 +1155,7 @@ footer{
         <div class="info-grid">
           <div class="info-item"><span>Name</span><p>Mannuru Devi Nishal</p></div>
           <div class="info-item"><span>Location</span><p>Tirupati, AP, India</p></div>
-          <div class="info-item"><span>Email</span><span class="eml"></span></div>
+          <div class="info-item"><span>Email</span></div>
           <div class="info-item"><span>Phone</span><p>+91 8985812005</p></div>
           <div class="info-item"><span>GitHub</span><a href="https://github.com/nishal-md" target="_blank">nishal-md</a></div>
           <div class="info-item"><span>Status</span><p style="color:#2dc653">● Available</p></div>
@@ -1338,8 +1338,11 @@ footer{
   <div class="contact-wrap">
     <div class="sr-l d1">
       <p style="font-size:0.97rem;color:rgba(245,242,238,0.55);line-height:1.85;font-weight:300;margin-bottom:2rem;">Whether it's a collaboration on an AI project, a job opportunity, open-source contribution, or just a great tech conversation — I'm always open. Let's build something impactful together.</p>
-      <span class="eml"></span>
+
+      <a class="big-email" onclick="this.href='mai'+'lto:'+'devinishal007'+'@'+'gmail.com'" href="#">devinishal007&#64;gmail.com</a>
+
       <div class="contact-info-list">
+        <div class="cinfo"><div class="cinfo-icon"><i class="fas fa-envelope"></i></div><div class="cinfo-text"><span>Email</span><a onclick="this.href='mai'+'lto:'+'devinishal007'+'@'+'gmail.com'" href="#">devinishal007&#64;gmail.com</a></div></div>
         <div class="cinfo"><div class="cinfo-icon"><i class="fas fa-phone"></i></div><div class="cinfo-text"><span>Phone</span><p>+91 8985812005</p></div></div>
         <div class="cinfo"><div class="cinfo-icon"><i class="fas fa-map-marker-alt"></i></div><div class="cinfo-text"><span>Location</span><p>Tirupati, Andhra Pradesh, India</p></div></div>
         <div class="cinfo"><div class="cinfo-icon"><i class="fab fa-github"></i></div><div class="cinfo-text"><span>GitHub</span><a href="https://github.com/nishal-md" target="_blank">github.com/nishal-md</a></div></div>
@@ -1369,7 +1372,7 @@ footer{
   <div class="footer-links">
     <a href="https://github.com/nishal-md" target="_blank" class="slink" title="GitHub"><i class="fab fa-github"></i></a>
     <a href="https://www.linkedin.com/in/devi-nishal-mannuru-1ba345307" target="_blank" class="slink" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    <span class="eml"></span>
+    <a onclick="this.href='mai'+'lto:'+'devinishal007'+'@'+'gmail.com'" href="#" class="slink" title="Email"><i class="fas fa-envelope"></i></a>
     <a href="tel:+918985812005" class="slink" title="Phone"><i class="fas fa-phone"></i></a>
   </div>
 </footer>
@@ -1531,20 +1534,7 @@ const dash=document.querySelector('.stats-dashboard');
 if(dash)dashObs.observe(dash);
 
 
-/* ── EMAIL DECODER (bypass Cloudflare protection) ── */
-(function(){
-  var u='devinishal007';
-  var d='gmail.com';
-  var e=u+'@'+d;
-  var spans=document.querySelectorAll('.eml');
-  spans.forEach(function(s){
-    var a=document.createElement('a');
-    a.href='mailto:'+e;
-    a.textContent=e;
-    a.style.color='inherit';
-    s.parentNode.replaceChild(a,s);
-  });
-})();
+
 
 /* ── CARD RADIAL GLOW ── */
 document.querySelectorAll('.about-right-top,.exp-card,.edu-card-main').forEach(c=>{
@@ -1557,5 +1547,6 @@ document.querySelectorAll('.about-right-top,.exp-card,.edu-card-main').forEach(c
   });
 });
 </script>
+
 </body>
 </html>
